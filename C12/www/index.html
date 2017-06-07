@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+
+        <script src="lib/jquery-1.11.2.min.js"></script>
+        <script src="lib/jquery.mobile-1.4.5.min.js"></script>
+        <script src="scripts/common.js"></script>
+        <script src="lib/jquery.validate.min.js"></script>
+
+    <title>C12</title>
+    </head>
+    <body>
+        <div data-role="page" id="mainpage">
+            <div data-role="main" class="ui-content">
+                <form name="diaryform" id="diaryform">
+                    <div class="ui-field-contain">
+                        <div data-role="fieldcontainer">
+                            <label for="txtTitle">Title:</label>
+                            <input type="text" name="txtTitle" id="txtTitle" value="I am learning about SQLite today">
+                        </div>
+
+                        <div data-role="fieldcontainer">
+                            <label for="txtDate">Date:</label>
+                            <input type="date" name="txtDate" id="txtDate" data-role="date" value="07/09/2015">
+                        </div>
+
+                        <div data-role="fieldcontainer">
+                            <label for="txtContents">Contents:</label>
+                            <textarea rows="8" name="txtContents" id="txtContents">I am enjoying it!</textarea>
+                        </div>
+
+                        <input type="button" value="Save Entry" id="btnSave">
+                    </div>
+                </form>
+
+                <div data-role="RecordSet" class="ui-content">
+                    <table data-role="table" data-mode="reflow" class="ui-responsive" id="diaryTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Entry Date</th>
+                                <th>Entry Title</th>
+                                <th>Entry Contents</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mybody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="page" data-dialog="true" id="editpage">
+            <div data-role="main" class="ui-content">
+                <form name="editform" id="editform">
+                    <div class="ui-field-contain">
+                        <input type="hidden" name="hidEditid" id="hidEditid">
+
+                        <div data-role="fieldcontainer">
+                            <label for="txtEdittitle">Title:</label>
+                            <input type="text" name="txtEdittitle" id="txtEdittitle">
+                        </div>
+
+                        <div data-role="fieldcontainer">
+                            <label for="txtEditdate">Date:</label>
+                            <input type="date" name="txtEditdate" id="txtEditdate" data-role="date">
+                        </div>
+
+                        <div data-role="fieldcontainer">
+                            <label for="txtEditcontents">Contents:</label>
+                            <textarea rows="8" name="txtEditcontents" id="txtEditcontents"></textarea>
+                        </div>
+
+                        <input type="button" value="Save Entry" id="btnUpdate">
+                        <input type="button" value="Delete" id="btnDelete">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+            <script type="text/javascript" src="cordova.js"></script>
+            <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+            <script type="text/javascript" src="scripts/index.js"></script>
+</body>
+</html>
